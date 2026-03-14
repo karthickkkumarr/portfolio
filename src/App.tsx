@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import Lenis from "@studio-freight/lenis";
 // import '@google/model-viewer';
@@ -18,12 +18,12 @@ const container = {
   hidden: {},
   show: { transition: { staggerChildren: 0.08 } },
 };
-const fadeUp = {
-  hidden: { opacity: 0, y: 16 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
-};
+// const fadeUp = {
+//   hidden: { opacity: 0, y: 16 },
+//   show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+// };
 
-function Section({ id, title, kicker, children }: { id: string; title: string; kicker?: string; children: React.ReactNode }) {
+function Section({ id  }: { id: string; title: string; kicker: string; children: React.ReactNode }) {
   return (
     <section id={id} className="scroll-mt-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
       <motion.div variants={container} initial="hidden" whileInView="show" viewport={{ amount: 0.2, once: true }}>
@@ -146,7 +146,7 @@ export default function PortfolioSite() {
       const anchor = target.closest("a[href^='#']") as HTMLAnchorElement | null;
       if (anchor && anchor.getAttribute("href")?.startsWith("#")) {
         e.preventDefault();
-        const el = document.querySelector(anchor.getAttribute("href")!);
+        document.querySelector(anchor.getAttribute("href")!);
         // if (el) lenis.scrollTo(el);
       }
     };
