@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { AnimatePresence } from "framer-motion";
 import Home from "./Home";
 import Projects from "./Projects";
@@ -11,14 +11,25 @@ import Car from "./Car";
 import IoT from "./IoT";
 import Heli from "./Heli";
 import About from "./About";
+import './index.css'
 
 type Page = "home" | "projects" | "contact" | "capetown" | "media" | "etrl" | "controls" | "car" | "IoT" | "heli" | "about";
 
+
+
 export default function App() {
   const [page, setPage] = useState<Page>("home");
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    scrollRef.current?.scrollTo({ top: 0, behavior: "instant" });
+  }, [page]);
 
   return (
-    <div style={{ position: "fixed", inset: 0, background: "#fff", overflow: "auto" }}>
+    <div
+      ref={scrollRef}
+      style={{ position: "fixed", inset: 0, background: "#fff", overflowY: "auto" }}
+    >
       <AnimatePresence mode="wait">
         {page === "home" && <Home setPage={setPage} />}
         {page === "projects" && <Projects setPage={setPage} />}

@@ -67,3 +67,30 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes dash {
+  to { stroke-dashoffset: -40; }
+}
+
+.neural-line {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.rocket-float {
+  animation: float 4s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.exhaust-line {
+  animation: dash 1s linear infinite;
+}
