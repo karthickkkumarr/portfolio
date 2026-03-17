@@ -1,0 +1,49 @@
+import { motion } from "framer-motion";
+import { ArrowLeft } from "lucide-react";
+
+type Page = "home" | "projects" | "contact" | "capetown" | "media" | "etrl";
+
+interface ContactProps {
+  setPage: (page: Page) => void;
+}
+
+export default function Contact({ setPage }: ContactProps) {
+  const pageVariants = {
+    hidden: { opacity: 0, y: 16 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+    exit: { opacity: 0, y: -10, transition: { duration: 0.3 } },
+  };
+
+  return (
+    <motion.div
+      key="contact"
+      variants={pageVariants}
+      initial="hidden"
+      animate="show"
+      exit="exit"
+      style={{
+        minHeight: "100vh", display: "flex", alignItems: "center",
+        justifyContent: "center", flexDirection: "column", gap: "1.5rem",
+      }}
+    >
+      <button
+        onClick={() => setPage("home")}
+        style={{
+          position: "absolute", top: "2rem", left: "2rem",
+          display: "flex", alignItems: "center", gap: "6px",
+          background: "none", border: "none", cursor: "pointer",
+          color: "#888", fontSize: "0.85rem",
+          fontFamily: "'DM Sans', sans-serif",
+        }}
+      >
+        <ArrowLeft size={14} /> Back
+      </button>
+      <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "2.8rem", fontWeight: 300, color: "#111" }}>
+        Say hello.
+      </h1>
+      <a href="mailto:karthick@example.com" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.9rem", color: "#888", textDecoration: "none", borderBottom: "1px solid #e0e0e0", paddingBottom: "2px" }}>
+        karthick@example.com
+      </a>
+    </motion.div>
+  );
+}
