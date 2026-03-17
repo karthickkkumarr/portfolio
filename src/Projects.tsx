@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 
-type Page = "home" | "projects" | "contact" | "capetown" | "media" | "etrl" | "controls" | "car";
+type Page = "home" | "projects" | "contact" | "capetown" | "media" | "etrl" | "controls" | "car" | "IoT" | "heli";
 
 interface ProjectsProps {
     setPage: (page: Page) => void;
@@ -156,7 +156,76 @@ export default function Projects({ setPage }: ProjectsProps) {
                         fontFamily: "'DM Sans', sans-serif",
                     }}>
                         <motion.img
-                            src="/portfolio/Crystal _cube_.png"   // ← your image path here
+                            src="/portfolio/datacenter.png"   // ← your image path here
+                            alt="Green Riders Cape Town"
+                            whileHover={{ scale: 1.05 }}
+                            transition={{ duration: 0.3 }}
+                            style={{
+                                width: "100%",
+                                height: "100%",
+                                objectFit: "cover",        // crops to fill, no distortion
+                                display: "block",
+                            }}
+                        />          </div>
+                    <ExternalLink size={16} style={{ color: "#ccc" }} />
+                </div>
+            </motion.div>
+
+            {/* Asset Management*/}
+            <motion.div
+                whileHover={{ x: 4 }}
+                onClick={() => setPage("IoT")}
+                style={{
+                    cursor: "pointer",
+                    borderTop: "1px solid #e8e8e8",
+                    padding: "2rem 0",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "flex-start",
+                    gap: "2rem",
+                }}
+            >
+                <div style={{ flex: 1, minWidth: 0 }}>
+                    <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.75rem", letterSpacing: "0.15em", color: "#aaa", textTransform: "uppercase", marginBottom: "0.5rem" }}>
+                        Independent Venture · Ongoing
+                    </p>
+                    <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.6rem", fontWeight: 300, color: "#111", margin: "0 0 0.75rem" }}>
+                        IoT Asset Management System with LoRa Connectivity
+                    </h2>
+                    <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.9rem", color: "#888", lineHeight: 1.7, maxWidth: "520px", margin: 0 }}>
+                        Researching and implementing an IoT asset management system with LoRa algorithms for real-time monitoring and visualization.
+                    </p>
+                    <div style={{ display: "flex", gap: "8px", marginTop: "1rem", flexWrap: "wrap" }}>
+                        {["IoT", "LoRa", "PostgreSQL", "React", "GIS", "Asset Tracking", "Fleet Management"
+                        ].map((tag) => (
+                            <span key={tag} style={{
+                                fontSize: "0.7rem", letterSpacing: "0.08em", color: "#999",
+                                border: "1px solid #e0e0e0", borderRadius: "20px", padding: "3px 10px",
+                                fontFamily: "'DM Sans', sans-serif",
+                            }}>
+                                {tag}
+                            </span>
+                        ))}
+                    </div>
+                </div>
+
+                <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: "0.75rem", flexShrink: 0 }}>
+                    <div style={{
+                        width: "160px",
+                        height: "180px",
+                        borderRadius: "6px",
+                        overflow: "hidden",
+                        background: "#f5f5f5",
+                        border: "1px solid #eee",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        color: "#ccc",
+                        fontSize: "0.85rem",
+                        fontFamily: "'DM Sans', sans-serif",
+                    }}>
+                        <motion.img
+                            src="/portfolio/iot-1.webp"   // ← your image path here
                             alt="Green Riders Cape Town"
                             whileHover={{ scale: 1.05 }}
                             transition={{ duration: 0.3 }}
@@ -293,6 +362,74 @@ export default function Projects({ setPage }: ProjectsProps) {
     }}>
       <motion.img
         src="/portfolio/car-hero.png"
+        alt="RC Vehicle Transmission"
+        whileHover={{ scale: 1.05 }}
+        transition={{ duration: 0.3 }}
+        style={{
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          display: "block",
+        }}
+      />
+    </div>
+    <ExternalLink size={16} style={{ color: "#ccc" }} />
+  </div>
+</motion.div>
+
+<motion.div
+  whileHover={{ x: 4 }}
+  onClick={() => setPage("heli")}
+  style={{
+    cursor: "pointer",
+    borderTop: "1px solid #e8e8e8",
+    padding: "2rem 0",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "flex-start",
+    gap: "2rem",
+  }}
+>
+  <div style={{ flex: 1, minWidth: 0 }}>
+    <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.75rem", letterSpacing: "0.15em", color: "#aaa", textTransform: "uppercase", marginBottom: "0.5rem" }}>
+      ME 370 Design Project · Completed
+    </p>
+    <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.6rem", fontWeight: 300, color: "#111", margin: "0 0 0.75rem" }}>
+      Stealth Snow Chopper Robot Rope Crawler
+    </h2>
+    <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.9rem", color: "#888", lineHeight: 1.7, maxWidth: "520px", margin: 0 }}>
+      Engineered a open loop rope crawler themed after a stealth snow chopper.
+    </p>
+    <div style={{ display: "flex", gap: "8px", marginTop: "1rem", flexWrap: "wrap" }}>
+      {["Creativity", "DFA", "DFM", "Linkage Synthesis", "Linkage Analysis", "Hand Tools", "Gear Systems"].map((tag) => (
+        <span key={tag} style={{
+          fontSize: "0.7rem", letterSpacing: "0.08em", color: "#999",
+          border: "1px solid #e0e0e0", borderRadius: "20px", padding: "3px 10px",
+          fontFamily: "'DM Sans', sans-serif",
+        }}>
+          {tag}
+        </span>
+      ))}
+    </div>
+  </div>
+
+  <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: "0.75rem", flexShrink: 0 }}>
+    <div style={{
+      width: "180px",
+      height: "180px",
+      borderRadius: "6px",
+      overflow: "hidden",
+      background: "#f5f5f5",
+      border: "1px solid #eee",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      color: "#ccc",
+      fontSize: "0.85rem",
+      fontFamily: "'DM Sans', sans-serif",
+    }}>
+      <motion.img
+        src="/portfolio/chopper-1.jpg"
         alt="RC Vehicle Transmission"
         whileHover={{ scale: 1.05 }}
         transition={{ duration: 0.3 }}

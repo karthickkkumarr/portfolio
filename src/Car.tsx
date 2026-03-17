@@ -43,16 +43,43 @@ export default function Car({ setPage }: CarProps) {
         Multi-Speed Remote-Control Vehicle with Sliding Gear Transmission
       </h1>
 
-      {/* Hero image slot */}
-      <div style={{
-        width: "100%", aspectRatio: "16/7",
-        borderRadius: "12px", marginBottom: "3rem",
-        overflow: "hidden",
-      }}>
-        <video autoPlay loop muted playsInline>
-          <source src={`${import.meta.env.BASE_URL}portfolio/car-1.mp4`} type="video/mp4" />
-        </video>
-      </div>
+      {/* Hero video slot */}
+<div
+  style={{
+    width: "100%",
+    maxWidth: "360px",        
+    aspectRatio: "19/25.4",      
+    borderRadius: "12px",
+    marginBottom: "3rem",
+    overflow: "hidden",
+    background: "#f5f5f5",
+    margin: "0 auto 3rem",    
+  }}
+>
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    preload="auto"
+    style={{
+      width: "100%",
+      height: "100%",
+      objectFit: "cover",
+      objectPosition: "center center",
+      display: "block",
+    }}
+    onError={(e) => {
+      console.error("Video failed to load");
+      (e.target as HTMLVideoElement).style.display = "none";
+    }}
+  >
+    <source
+      src="/portfolio/car-1.mp4"
+      type="video/mp4"
+    />
+  </video>
+</div>
 
       {/* Overview */}
       <div style={{ marginBottom: "2.5rem" }}>

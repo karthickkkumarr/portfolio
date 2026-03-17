@@ -8,8 +8,11 @@ import Media from "./Media";
 import Contact from "./Contact";
 import Controls from "./Controls";
 import Car from "./Car";
+import IoT from "./IoT";
+import Heli from "./Heli";
+import About from "./About";
 
-type Page = "home" | "projects" | "contact" | "capetown" | "media" | "etrl" | "controls" | "car";
+type Page = "home" | "projects" | "contact" | "capetown" | "media" | "etrl" | "controls" | "car" | "IoT" | "heli" | "about";
 
 export default function App() {
   const [page, setPage] = useState<Page>("home");
@@ -25,6 +28,9 @@ export default function App() {
         {page === "media" && <Media setPage={setPage} />}
         {page === "contact" && <Contact setPage={setPage} />}
         {page === "car" && <Car setPage={setPage} />}
+        {page === "IoT" && <IoT setPage={setPage} />}
+        {page === "heli" && <Heli setPage={setPage} />}
+        {page === "about" && <About setPage={setPage} />}
       </AnimatePresence>
     </div>
   );

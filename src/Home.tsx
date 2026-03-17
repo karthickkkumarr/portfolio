@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-type Page = "home" | "projects" | "contact" | "capetown" | "media" | "etrl";
+type Page = "home" | "projects" | "contact" | "capetown" | "media" | "etrl" | "controls" | "car" | "IoT" | "heli" | "about";
 
 interface HomeProps {
   setPage: (page: Page) => void;
@@ -105,7 +105,7 @@ export default function Home({ setPage }: HomeProps) {
           />
         </motion.div>
 
-        <Tile id="name" label="Karthick Kumar" isName hovered={hovered} setHovered={setHovered} onClick={() => {}} />
+        <Tile id="name" label="Karthick Kumar" isName hovered={hovered} setHovered={setHovered} onClick={() => setPage("about")} />
         <Tile id="projects" label="Projects" hovered={hovered} setHovered={setHovered} onClick={() => setPage("projects")} />
         <Tile id="contact" label="Contact" hovered={hovered} setHovered={setHovered} onClick={() => setPage("contact")} />
       </motion.div>
