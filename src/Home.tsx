@@ -163,6 +163,45 @@ export default function Home({ setPage }: HomeProps) {
       <Tile id="projects" label="Projects" hovered={hovered} setHovered={setHovered} onClick={() => setPage("projects")} />
       <Tile id="contact" label="Contact" hovered={hovered} setHovered={setHovered} onClick={() => setPage("contact")} />
     </motion.div>
+
+    <motion.div
+  variants={{
+    hidden: { opacity: 0 },
+    show: { opacity: 1, transition: { duration: 0.8, delay: 0.6 } },
+  }}
+  style={{
+    position: "fixed",
+    bottom: "1.5rem",
+    left: "50%",
+    transform: "translateX(-50%)",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    gap: "4px",
+    zIndex: 1,
+  }}
+>
+  <p style={{
+    fontFamily: "'DM Sans', sans-serif",
+    fontSize: "0.7rem",
+    color: "#bbb",
+    letterSpacing: "0.08em",
+    margin: 0,
+    whiteSpace: "nowrap",
+  }}>
+    © {new Date().getFullYear()} Karthick Kumar
+  </p>
+  <p style={{
+    fontFamily: "'DM Sans', sans-serif",
+    fontSize: "0.7rem",
+    color: "#ccc",
+    letterSpacing: "0.06em",
+    margin: 0,
+    whiteSpace: "nowrap",
+  }}>
+    Built with React · Framer Motion · Vite · GitHub Pages
+  </p>
+</motion.div>
   </motion.div>
 );
 }
