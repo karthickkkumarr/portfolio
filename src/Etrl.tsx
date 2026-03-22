@@ -137,7 +137,7 @@ export default function Etrl({ setPage }: EtrlProps) {
           Gallery
         </p>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
-          {["Image.jpg", "Image (1).jpg", "etrl-3.jpg"].map((src) => (
+          {["Image.jpg", "Image (1).jpg", "research-1.jpg", "research-2.jpg", "etrl-3.jpg"].map((src) => (
             <div key={src} style={{
               aspectRatio: "4/3", background: "#f5f5f5", borderRadius: "8px",
               border: "1px solid #eee", overflow: "hidden",
